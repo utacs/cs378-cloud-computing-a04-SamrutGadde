@@ -17,6 +17,7 @@ import org.apache.hadoop.util.ToolRunner;
 
 public class WordCount extends Configured implements Tool {
 
+	
 	/**
 	 * 
 	 * @param args
@@ -45,7 +46,7 @@ public class WordCount extends Configured implements Tool {
 			job.setReducerClass(WordCountReducer.class);
 
 			// specify output types
-			job.setOutputKeyClass(Text.class);
+			job.setOutputKeyClass(Integer.class);
 			job.setOutputValueClass(IntWritable.class);
 
 			// specify input and output directories
