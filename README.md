@@ -64,7 +64,7 @@ Running as Java Application:
 
 Or has hadoop application
 
-```hadoop jar your-hadoop-application.jar edu.cs.utexas.HadoopEx.WordCount arg0 arg1 ... ```
+```hadoop jar target/MapReduce-WordCount-example-0.1-SNAPSHOT-jar-with-dependencies.jar  taxi-data-sorted-small.csv output final```
 
 
 
