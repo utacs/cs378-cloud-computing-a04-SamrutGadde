@@ -11,7 +11,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import com.sun.xml.bind.v2.runtime.reflect.opt.Const;
 
-public class WordCountMapper extends Mapper<Object, Text, IntWritable, IntWritable> {
+public class Task1Mapper extends Mapper<Object, Text, IntWritable, IntWritable> {
 
 	public void map(Object key, Text value, Context context)
 			throws IOException, InterruptedException {
