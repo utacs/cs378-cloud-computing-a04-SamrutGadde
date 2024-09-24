@@ -3,7 +3,6 @@ package edu.cs.utexas.HadoopEx;
 import java.io.IOException;
 
 import org.apache.hadoop.io.DoubleWritable;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
@@ -20,8 +19,9 @@ public class Task2Reducer extends Reducer<Text, Text, Text, DoubleWritable> {
             total += Integer.parseInt(errorAndTotal[1]);
         }
 
-        double proportion = errors/total;
+        double percentErrors = ((double) errors / total) * 100;
+        System.out.println("Percent Errors: " + percentErrors + " Errors: " + errors + " Total: " + total);
 
-        context.write(taxiId, new DoubleWritable(proportion));
+        context.write(taxiId, new DoubleWritable(percentErrors));
     }
 }

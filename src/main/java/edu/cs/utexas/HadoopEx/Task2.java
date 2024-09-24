@@ -20,7 +20,7 @@ import org.apache.hadoop.util.ToolRunner;
 public class Task2 extends Configured implements Tool {
 
 	/**
-	 * 
+	 *
 	 * @param args
 	 * @throws Exception
 	 */
@@ -31,8 +31,8 @@ public class Task2 extends Configured implements Tool {
 	}
 
 	/**
-	 * 
-	 */
+	*
+	*/
 	public int run(String args[]) {
 		try {
 			Configuration conf = new Configuration();
@@ -48,7 +48,7 @@ public class Task2 extends Configured implements Tool {
 
 			// specify output types
 			job.setOutputKeyClass(Text.class);
-			job.setOutputValueClass(DoubleWritable.class);
+			job.setOutputValueClass(Text.class);
 
 			// specify input and output directories
 			FileInputFormat.addInputPath(job, new Path(args[0]));
@@ -61,30 +61,30 @@ public class Task2 extends Configured implements Tool {
 				return 1;
 			}
 
-			// Job job2 = new Job(conf, "TopK");
-			// job2.setJarByClass(WordCount.class);
+			Job job2 = new Job(conf, "TopK");
+			job2.setJarByClass(Task2.class);
 
-			// // specify a Mapper
-			// job2.setMapperClass(TopKMapper.class);
+			// specify a Mapper
+			job2.setMapperClass(Task2TopKMapper.class);
 
-			// // specify a Reducer
-			// job2.setReducerClass(TopKReducer.class);
+			// specify a Reducer
+			job2.setReducerClass(Task2TopKReducer.class);
 
-			// // specify output types
-			// job2.setOutputKeyClass(Text.class);
-			// job2.setOutputValueClass(IntWritable.class);
+			// specify output types
+			job2.setOutputKeyClass(Text.class);
+			job2.setOutputValueClass(DoubleWritable.class);
 
-			// // set the number of reducer to 1
-			// job2.setNumReduceTasks(1);
+			// set the number of reducer to 1
+			job2.setNumReduceTasks(1);
 
 			// specify input and output directories
-			// FileInputFormat.addInputPath(job2, new Path(args[1]));
-			// job2.setInputFormatClass(KeyValueTextInputFormat.class);
+			FileInputFormat.addInputPath(job2, new Path(args[1]));
+			job2.setInputFormatClass(KeyValueTextInputFormat.class);
 
-			// FileOutputFormat.setOutputPath(job2, new Path(args[2]));
-			// job2.setOutputFormatClass(TextOutputFormat.class);
+			FileOutputFormat.setOutputPath(job2, new Path(args[2]));
+			job2.setOutputFormatClass(TextOutputFormat.class);
 
-			// return (job2.waitForCompletion(true) ? 0 : 1);
+			return (job2.waitForCompletion(true) ? 0 : 1);
 
 		} catch (InterruptedException | ClassNotFoundException | IOException e) {
 			System.err.println("Error during driver job.");
