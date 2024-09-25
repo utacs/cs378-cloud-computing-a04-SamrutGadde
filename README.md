@@ -28,8 +28,24 @@
 
 # Add your Project REPORT HERE 
 
-Screenshots
+## Task 1
+
+## Task 2
+
+## Task 3
+
+## Screenshots
+Dataproc - Cluster Details
 ![Dataproc](images/dataproc_sc.png)
+
+Yarn History Task 1
+![Yarn History Task 1](images/dataproc_sc.png)
+
+Yarn History Task 2
+![Yarn History Task 2](images/dataproc_sc.png)
+
+Yarn History Task 3
+![Yarn History Task 3](images/dataproc_sc.png)
 
 
 # Project Template
