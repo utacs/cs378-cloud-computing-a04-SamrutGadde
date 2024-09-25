@@ -2,13 +2,21 @@
 
 ## Team members' names 
 
-1. Student Name:
+1. Student Name: Karnika Choudhury
 
-   Student UT EID:
+   Student UT EID: kc45756
 
-2. Student Name:
+2. Student Name: Samrut Gadde
 
-   Student UT EID:
+   Student UT EID: sg53989
+
+3. Student Name: Kshitij Kapoor
+
+   Student UT EID: kk36592
+
+4. Student Name: Navya Agrawal
+
+   Student UT EID: na27378
 
  ...
 
@@ -19,6 +27,9 @@
 
 
 # Add your Project REPORT HERE 
+
+Screenshots
+![Dataproc](images/dataproc_sc.png)
 
 
 # Project Template
